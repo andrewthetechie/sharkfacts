@@ -1,0 +1,9 @@
+# Bottle info
+BIND_IP: '127.0.0.1'
+BIND_PORT: 5000
+
+# Fact info
+FACT_FILE: './facts.txt'
+
+# Logging info
+LOG_FILE: './sharkfacts.log'
