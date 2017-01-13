@@ -98,10 +98,10 @@ class Config(object):
 
 @post('/sharkfact')
 def sharkfact():
-    return _get_sharkfact()
+    return _get_sharkfact(return_type='json')
 
 
-def _get_sharkfact(return_type='test'):
+def _get_sharkfact(return_type='text'):
     """
     Returns a random fact from our FACTS variable
     :param return_type: string, can be text for plaintext or json
@@ -120,17 +120,16 @@ def _get_sharkfact(return_type='test'):
                 {
                     'fallback': fact,
                     'author_name': 'Sammy The Shark',
-                    'author_link': 'http://flickr.com/bobby/',
-                    'author_icon': 'http://flickr.com/icons/bobby.jpg',
                     'title': 'Shark Fact!',
                     'text': fact,
 
                 }
             ]
         }
-        to_return = json.dumps(fact_json)
+        to_return = fact_json
 
     return to_return
+
 
 def _load_facts(file):
     """
