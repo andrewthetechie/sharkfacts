@@ -115,16 +115,7 @@ def _get_sharkfact(return_type='text'):
         fact = random.choice(FACTS)
         fact_json = {
             'response_type': 'in_channel',
-            'text': fact,
-            'attachments': [
-                {
-                    'fallback': fact,
-                    'author_name': 'Sammy The Shark',
-                    'title': 'Shark Fact!',
-                    'text': fact,
-
-                }
-            ]
+            'text': fact
         }
         to_return = fact_json
 
